@@ -3,6 +3,7 @@ package com.oxinrong;
 import com.oxinrong.R;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Point;
 import android.hardware.Camera;
 import android.hardware.Camera.CameraInfo;
@@ -19,6 +20,7 @@ import android.view.Window;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
@@ -27,7 +29,10 @@ public class CameraActivity extends Activity{
 	CameraSurfaceView surfaceView = null;
 	ImageButton shutterBtn;
 	ImageButton switchBtn;
+	ImageButton galleryBtn;	
+	ImageButton settingBtn;	
 	FaceView faceView;
+	
 	public static DisplayMetrics dm;
 	
 	float previewRate = -1f;
@@ -55,6 +60,32 @@ public class CameraActivity extends Activity{
 		shutterBtn.setOnClickListener(new BtnListeners());
 		switchBtn.setOnClickListener(new BtnListeners());
 		mMainHandler.sendEmptyMessageDelayed(EventUtil.CAMERA_HAS_STARTED_PREVIEW, 1500);
+	
+		galleryBtn = (ImageButton)findViewById(R.id.btn_gallery);
+		galleryBtn.setOnClickListener(new Button.OnClickListener()
+				{			
+					@Override
+					public void onClick(View v) {
+						// TODO Auto-generated method stub
+						Intent intent = new Intent();
+						intent.setClass(CameraActivity.this,checkActivity.class);
+						startActivity(intent);
+					}
+					
+				});
+		
+		settingBtn = (ImageButton)findViewById(R.id.btn_setting);
+		settingBtn.setOnClickListener(new Button.OnClickListener()
+				{			
+					@Override
+					public void onClick(View v) {
+						// TODO Auto-generated method stub
+						Intent intent = new Intent();
+						intent.setClass(CameraActivity.this,SettingActivity.class);
+						startActivity(intent);
+					}
+					
+				});
 	}
 
 	@Override

@@ -5,13 +5,25 @@
     android:layout_height="120dp"
     android:paddingLeft="10dp"
     android:paddingRight="10dp" 
-     android:layout_alignParentBottom="true">
+    android:paddingBottom="10dp" 
+    android:paddingTop="30dp" 
+    android:background="#a9b7b7"
+    android:layout_alignParentBottom="true">
 
     <ImageButton
         android:id="@+id/btn_shutter"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_centerInParent="true"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_centerHorizontal="true"     
+        android:layout_marginBottom="18dp"          
         android:background="@drawable/btn_shutter_background" />
+    
+        <ImageButton
+        android:id="@+id/btn_gallery"
+        android:layout_width="62dp"
+        android:layout_height="24dp"
+        android:layout_centerHorizontal="true"        
+        android:layout_below="@id/btn_shutter" 
+        android:background="@drawable/ic_gallery" />
 
 </RelativeLayout>

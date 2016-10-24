@@ -3,6 +3,7 @@ package com.oxinrong;
 import com.oxinrong.R;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.graphics.Point;
 import android.hardware.Camera;
@@ -21,6 +22,7 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
@@ -61,7 +63,7 @@ public class CameraActivity extends Activity{
 		switchBtn.setOnClickListener(new BtnListeners());
 		mMainHandler.sendEmptyMessageDelayed(EventUtil.CAMERA_HAS_STARTED_PREVIEW, 1500);
 	
-		galleryBtn = (ImageButton)findViewById(R.id.btn_gallery);
+	/*	galleryBtn = (ImageButton)findViewById(R.id.btn_gallery);
 		galleryBtn.setOnClickListener(new Button.OnClickListener()
 				{			
 					@Override
@@ -70,6 +72,21 @@ public class CameraActivity extends Activity{
 						Intent intent = new Intent();
 						intent.setClass(CameraActivity.this,checkActivity.class);
 						startActivity(intent);
+					}
+					
+				});*/
+		galleryBtn = (ImageButton)findViewById(R.id.btn_gallery);
+		galleryBtn.setOnClickListener(new Button.OnClickListener()
+				{			
+					@Override
+					public void onClick(View v) {
+						// TODO Auto-generated method stub
+						new AlertDialog.Builder(CameraActivity.this)  
+						.setTitle("Enter your password")  
+						.setView(new EditText(CameraActivity.this))  
+						.setPositiveButton("ok", null)  
+						.setNegativeButton("cancel", null)  
+						.show();  
 					}
 					
 				});

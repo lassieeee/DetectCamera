@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class checkActivity extends Activity {
+public class GalleryActivity extends Activity {
 
 	  /** Called when the activity is first created. */ 
 	  @Override 

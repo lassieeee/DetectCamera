@@ -3,45 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="20dp"
-    tools:context=".checkActivity" >
+    tools:context=".GalleryActivity">
 
- <TableLayout  
-    android:layout_width="fill_parent"  
-    android:layout_height="wrap_content"  
-    android:stretchColumns="3"    
-    android:gravity="center_vertical" 
-    android:layout_centerInParent="true"  
-    
-    > 
-     <TableRow>    
-        <TextView /> 
- <TextView  
-  android:id="@+id/myTextView" 
-  android:layout_width="wrap_content"
-  android:layout_height="wrap_content"
-  android:textSize="18sp"
-  android:layout_x="18px"
-  android:layout_y="20px"
-  android:text="Enter your password"
-  />
-    </TableRow> 
-    <TableRow>    
-        <TextView /> 
-  <EditText
-  android:id="@+id/myEditText"
-  android:layout_width="800px"
-  android:layout_height="wrap_content"
-  android:textSize="18sp"
-  android:layout_x="14px"
-  android:layout_y="41px"
-  />  
-    
-   <ImageButton
-        android:id="@+id/btn_enter"
-        android:layout_width="25dp"
-        android:layout_height="25dp"    
-        android:background="@drawable/ic_enter"/>
-        </TableRow> 
-  </TableLayout>
+ 
 
 </RelativeLayout>

@@ -36,7 +36,7 @@
         </activity>
 
                 <activity
-            android:name="com.oxinrong.checkActivity">
+            android:name="com.oxinrong.GalleryActivity">
         </activity>
         <activity
             android:name="com.oxinrong.SettingActivity">

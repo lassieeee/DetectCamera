@@ -24,7 +24,7 @@ public class GuideActivity extends Activity implements OnPageChangeListener {
 	// 定义一个ArrayList来存放View
 	private ArrayList<View> views;
 	// 定义各个界面View对象
-	private View view1, view2, view3, view4;
+	private View view1, view2;
 	// 定义开始按钮对象
 	private Button btnStart;
 
@@ -49,16 +49,14 @@ public class GuideActivity extends Activity implements OnPageChangeListener {
 		LayoutInflater mLi = LayoutInflater.from(this);
 		view1 = mLi.inflate(R.layout.guide_view1, null);
 		view2 = mLi.inflate(R.layout.guide_view2, null);
-		view3 = mLi.inflate(R.layout.guide_view3, null);
-		view4 = mLi.inflate(R.layout.guide_view4, null);
+
 
 		// 实例化ArrayList对象
 		views = new ArrayList<View>();
 		// 将要分页显示的View装入数组中
 		views.add(view1);
 		views.add(view2);
-		views.add(view3);
-		views.add(view4);
+
 
 		// 设置监听
 		viewPager.setOnPageChangeListener(this);
@@ -66,7 +64,7 @@ public class GuideActivity extends Activity implements OnPageChangeListener {
 		viewPager.setAdapter(new ViewPagerAdapter(views));
 
 		// 实例化开始按钮
-		btnStart = (Button) view4.findViewById(R.id.startBtn);
+		btnStart = (Button) view2.findViewById(R.id.startBtn);
 		// 给开始按钮设置监听
 		btnStart.setOnClickListener(new OnClickListener() {
 			@Override

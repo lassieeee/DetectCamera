@@ -4,6 +4,7 @@ import com.oxinrong.R;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Point;
 import android.hardware.Camera;
@@ -13,6 +14,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.util.DisplayMetrics;
+import android.view.ContextThemeWrapper;
 import android.view.Menu;
 import android.view.OrientationEventListener;
 import android.view.SurfaceHolder;
@@ -84,7 +86,15 @@ public class CameraActivity extends Activity{
 						new AlertDialog.Builder(CameraActivity.this)  
 						.setTitle("Enter your password")  
 						.setView(new EditText(CameraActivity.this))  
-						.setPositiveButton("ok", null)  
+						.setPositiveButton("ok", new DialogInterface.OnClickListener() {  
+			                @Override  
+			                public void onClick(DialogInterface dialog,int which) {  
+			                    // TODO Auto-generated method stub 
+			                	Intent intent = new Intent();
+								intent.setClass(CameraActivity.this,GalleryActivity.class);
+								startActivity(intent);
+			                }  
+			            })  
 						.setNegativeButton("cancel", null)  
 						.show();  
 					}
